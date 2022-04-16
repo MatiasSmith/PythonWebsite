@@ -8,8 +8,6 @@ app = Flask(__name__)
 #secret key: way that we decrypt and encrypt data
 app.secret_key = "bobross"
 
-
-
 @app.route("/")
 def home():
     return render_template("index.html", content=3)
