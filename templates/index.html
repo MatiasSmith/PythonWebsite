@@ -12,9 +12,14 @@
 
     
     <div>
-        <h1>Testing home page
+        <h1>Upload a file
 
         </h1>
+        <form method='POST' enctype='multipart/form-data'>
+            {{form.hidden_tag()}}
+            {{form.file()}}
+            {{form.submit}}
+        </form>
         <p>
             {{content}}
         </p>
