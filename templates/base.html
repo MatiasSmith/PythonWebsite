@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing home page</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='mystyle.css')}}">
+    <title>{% block title %}{% endblock %}</title>
+    
 
 </head>
 <body>
 
+    {% block content %}
+    {% endblock %}
     
     <div>
         <h1>Testing home page
