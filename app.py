@@ -1,3 +1,4 @@
+import re
 from flask import Flask, redirect, url_for, render_template, request, session, flash
 from datetime import timedelta
 from flask_wtf import FlaskForm
@@ -23,16 +24,19 @@ app.config['UPLOAD_FOLDER'] = 'static/files'
 app.secret_key = "bobross"
 app.permanent_session_lifetime = timedelta(days=5)
 
+
+def test():
+    return 987
 #Page path ~/
-@app.route("/", methods=['GET', "POST"])
-@app.route("/home", methods=['GET', "POST"])
-def home():
-    form = UploadFileForm()
-    if form.validate_on_submit():
-        file = form.file.data
-        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
-        return "File has been uploaded."
-    return render_template("index.html", form=form)
+#@app.route("/", methods=['GET', "POST"])
+#@app.route("/home", methods=['GET', "POST"])
+#def home():
+#    form = UploadFileForm()
+#    if form.validate_on_submit():
+#        file = form.file.data
+#        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
+#        return "File has been uploaded."
+#    return render_template("index.html", form=form)
 
 #Page path ~/login
 @app.route("/login", methods=["POST", "GET"])
@@ -64,10 +68,11 @@ def login():
 def user():
     #Check if the user was in session
     if "user" in session:        
-        usr = session["user"]
+        usr = test()
+        #usr = session["user"]
         usr2 = session["user2"]
         #return f"<h1>{usr}</h1><h2>{usr2}</h2>"
-        render_template("user.html", user=usr, user2=usr2)
+        return render_template("user.html", user=usr, user2=usr2)
 
     #Else if theres no user in my session
     else:
