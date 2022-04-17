@@ -68,6 +68,7 @@ def home():
         
         else:
             return render_template("home.html")
+    return render_template("home.html")
     
     
 #For Downloading a file

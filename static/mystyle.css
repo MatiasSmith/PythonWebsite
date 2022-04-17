@@ -7,16 +7,10 @@ h6 {
 h2 {
 
     color: red;
-    margin-left: 400px;
+    /* margin-left: 400px; */
 
 }
-div {
-    margin-left: 100px;
-}
 
-p {
-    margin-left: 50px;
-}
 
 body {
     background-image: linear-gradient(rgba(161, 175, 231, 0.7), rgba(23, 47, 140, 0.7)), url("website_images/background1.jpg");
@@ -36,4 +30,7 @@ body {
     outline-color: 343a40;
 }
 
+.form-control {
+    color: purple;
+}
 
