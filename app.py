@@ -9,6 +9,9 @@ import os
 #import numpy as np
 #import pytorch as py
 
+
+# This is a test to see if I can commit properly
+
 app = Flask(__name__)
 #app.register_blueprint(views, url_prefix='/views')
 #secret key: way that we decrypt and encrypt data
